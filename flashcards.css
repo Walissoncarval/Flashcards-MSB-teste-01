@@ -1,274 +1,252 @@
-flascards msb 
-/* FlashcardMSB.css */
+/*
+=====================================================
+FlashcardMSB.css - Código Final Corrigido
+=====================================================
+*/
 
+/* --- Global Reset & Body --- */
 body {
-  background-color: #0d1117;
-  color: #e6edf3;
-  font-family: 'Poppins', sans-serif;
-  margin: 100%;
-  padding: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+    /* Correção: Define margin e padding como zero e centraliza o conteúdo */
+    margin: 0;
+    padding: 0;
+    
+    background-color: #0d1117; /* Tema escuro */
+    color: #e6edf3; /* Cor do texto claro */
+    font-family: 'Poppins', sans-serif;
+    
+    /* Centralização da Aplicação */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    line-height: 1.5; 
 }
 
+/* --- Container Principal --- */
 .app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%; 
-  max-width: 500px;
-  padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .app-title {
-  font-size: 2rem;
-  color: #58a6ff;
-  text-align: center;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+    font-size: 2rem;
+    color: #58a6ff;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 
 .flashcard-wrapper {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
-/* 🔧 Ajuste de tamanho e centralização */
+/* --- Flashcard e Flip Animation --- */
 .flashcard {
-  width: 100%;
-  max-width: 400px; 
-  min-height: 280px; /* altura mínima maior para legibilidade */
-  perspective: 1000px;
-  cursor: pointer;
-  position: relative;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    min-height: 280px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+    margin: 0 auto;
 }
 
-/* 🔧 Estilos internos do card */
 .flashcard .front, .flashcard .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  backface-visibility: hidden;
-  transition: transform 0.8s ease;
-  box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center; /* 🔧 Centraliza o conteúdo */
-  overflow: hidden; /* 🔧 Remove barra de rolagem vertical */
-  display: flex; /* 🔧 Centraliza verticalmente o conteúdo */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  word-break: break-word; /* 🔧 Quebra linhas longas automaticamente */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    transition: transform 0.8s ease;
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    word-break: break-word;
 }
 
 .flashcard .front {
-  background: linear-gradient(145deg, #161b22, #0d1117);
-  border: 1px solid #30363d;
+    background: linear-gradient(145deg, #161b22, #0d1117);
+    border: 1px solid #30363d;
 }
 
 .flashcard .back {
-  background: linear-gradient(145deg, #1c2128, #0d1117);
-  border: 1px solid #30363d;
-  transform: rotateY(180deg);
+    background: linear-gradient(145deg, #1c2128, #0d1117);
+    border: 1px solid #30363d;
+    transform: rotateY(180deg);
 }
 
 .flashcard.flipped .front {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .flashcard.flipped .back {
-  transform: rotateY(360deg);
+    transform: rotateY(360deg);
 }
 
-/* --- Estilos de conteúdo --- */
+/* --- Estilos de Conteúdo (Corrigidos: removido o espaço da unidade 'rem') --- */
 .materia {
-  font-size: 1.1 rem;
-  font-weight: bold;
-  color: #79c0ff;
-  margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #79c0ff;
+    margin-bottom: 5px;
 }
 
 .assunto {
-  margin-bottom: 15px;
-  color: #c9d1d9;
+    margin-bottom: 15px;
+    color: #c9d1d9;
 }
 
 .afirmacao {
-  font-size: 1.2 rem;
-  margin-top: 10px;
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
 .dica {
-  margin-top: 15px;
-  font-style: italic;
-  color: #9be9a8;
+    margin-top: 15px;
+    font-style: italic;
+    color: #9be9a8;
 }
 
 .resposta {
-  font-size: 1.8 rem;
-  color: #4eaed9;
-  text-align: center;
-  margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #4eaed9;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.justificativa {
-  font-size: 0.9 rem;
-  color: #c9d1d9;
-  margin-bottom: 10px;
+.justificativa, .esquema {
+    font-size: 0.9rem;
+    color: #c9d1d9;
+    margin-bottom: 10px;
 }
 
 .esquema {
-  font-size: 0.9 rem;
-  color: #d2a8ff;
-  margin-bottom: 10px;
+    color: #d2a8ff;
 }
 
-/* --- Controles --- */
+/* --- Controles (Botões) --- */
 .controls, .deck-controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%; 
+    max-width: 400px;
 }
 
 .btn {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-size: 0.9 rem;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
 }
 
 .btn-correct, .btn-incorrect, .btn-next {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 
-/* Botões de Estudo */
-.btn-correct {
-  background-color: #238636;
-  color: #ffffff;
-}
-.btn-correct:hover:not(:disabled) {
-  background-color: #2ea043;
-}
-.btn-incorrect {
-  background-color: #a4260f;
-  color: #ffffff;
-}
-.btn-incorrect:hover:not(:disabled) {
-  background-color: #c2381e;
-}
-.btn-next {
-  background-color: #30363d;
-  color: #c9d1d9;
-}
-.btn-next:hover:not(:disabled) {
-  background-color: #484f58;
-}
-
-/* Botões de Baralho */
-.btn-deck {
-  background-color: #58a6ff;
-  color: #0d1117;
-}
-.btn-deck:hover:not(:disabled) {
-  background-color: #79c0ff;
-}
+/* Estilos de Cores dos Botões de Ação */
+.btn-correct { background-color: #238636; color: #ffffff; }
+.btn-correct:hover:not(:disabled) { background-color: #2ea043; }
+.btn-incorrect { background-color: #a4260f; color: #ffffff; }
+.btn-incorrect:hover:not(:disabled) { background-color: #c2381e; }
+.btn-next { background-color: #30363d; color: #c9d1d9; }
+.btn-next:hover:not(:disabled) { background-color: #484f58; }
+.btn-deck { background-color: #58a6ff; color: #0d1117; }
+.btn-deck:hover:not(:disabled) { background-color: #79c0ff; }
 
 .btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
-/* Placar e Fase */
+/* --- Placar e Fase --- */
 .score-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-  font-size: 1 rem;
-  color: #8b949e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #8b949e;
+    width: 100%;
 }
 
 #faseDisplay {
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 /* Estilos para as Fases */
-.fase-0 { 
-  background-color: #21262d;
-  color: #58a6ff;
-  border: 1px solid #30363d;
-}
-.fase-1 { 
-  background-color: #633c01; 
-  color: #ffd872;
-}
-.fase-2 {
-  background-color: #0d4429;
-  color: #9be9a8;
-}
-.fase-3 { 
-  background-color: #0a3069;
-  color: #58a6ff;
-}
+.fase-0 { background-color: #21262d; color: #58a6ff; border: 1px solid #30363d; }
+.fase-1 { background-color: #633c01; color: #ffd872; }
+.fase-2 { background-color: #0d4429; color: #9be9a8; }
+.fase-3 { background-color: #0a3069; color: #58a6ff; }
 
 /* --- Criador de Cards --- */
 .card-creator {
-  background-color: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 20px;
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
-  text-align: left;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    text-align: left;
 }
 
 .card-creator h3 {
-  color: #79c0ff;
-  margin-top: 0;
-  margin-bottom: 15px;
-  text-align: center;
+    color: #79c0ff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
-.card-creator input[type="text"], 
+.card-creator input[type="text"],
 .card-creator textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #30363d;
-  border-radius: 4px;
-  background-color: #0d1117;
-  color: #e6edf3;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  resize: vertical;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    background-color: #0d1117;
+    color: #e6edf3;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
 }
 
 .card-creator textarea {
-  min-height: 50px;
+    min-height: 50px;
 }
 
 #addCardBtn, #closeCreatorBtn {
-  width: 48%;
-  display: inline-block;
-  margin-top: 10px;
+    width: 48%;
+    display: inline-block;
+    margin-top: 10px;
 }
+
 
 
 
